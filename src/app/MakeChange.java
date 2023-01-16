@@ -23,9 +23,10 @@ public class MakeChange {
 //		Display an appropriate message if the customer provided too little money or the exact amount.
 		if (amtTender < itemPrice) {
 			amtRemaining = amtTender - itemPrice;
-			System.err.print("The item is: " + itemPrice 
+
+			System.err.print("The item is: " + Math.round(itemPrice) 
 							+ " Please pay the remaining amount: " 
-							+ amtRemaining);
+							+ Math.round(amtRemaining));
 		} else if (amtTender == itemPrice) {
 			System.out.print("Thank you come again! ");
 //    	User Story #4
