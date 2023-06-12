@@ -24,9 +24,9 @@ public class MakeChange {
 		if (amtTender < itemPrice) {
 			amtRemaining = amtTender - itemPrice;
 
-			System.err.print("The item is: " + Math.round(itemPrice) 
+			System.err.print("The item is: " + itemPrice 
 							+ " Please pay the remaining amount: " 
-							+ Math.round(amtRemaining));
+							+ amtRemaining);
 		} else if (amtTender == itemPrice) {
 			System.out.print("Thank you come again! ");
 //    	User Story #4
@@ -40,7 +40,7 @@ public class MakeChange {
 	private static void changeBreakdown(double amtTender, double itemPrice) {
 
 		double change = amtTender - itemPrice;
-		System.out.println("Your change is: $" + change);
+		System.out.println("Your change is: $" + Math.ceil(change * 100) / 100.0);
 		System.out.println("\nChange Breakdown:");
 
 		int twentyDollars = (int) change / 20;
@@ -78,11 +78,11 @@ public class MakeChange {
 			change -= nickel * .05;
 			System.out.println(nickel + " nickel(s)");
 		}
-		int penny = (int) (change / .01);
+		int penny = (int) Math.ceil(change / .01);
 		if (penny > 0) {
-			change -= penny * .01;
+			change -= Math.ceil(penny) * .01;
 			System.out.println(penny + " penny(s)");
 		}
 
-	}// changeBreakDown Bracket
+	}// changeBreakDown Brackets
 }// Class Bracket
